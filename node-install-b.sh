@@ -18,7 +18,9 @@ sudo add-apt-repository \
       $(lsb_release -cs) \
       stable"
 sudo apt-get update -y
-sudo apt-get install -y docker-ce
+
+### Additional packes added based on Docker Official Documentation - https://docs.docker.com/engine/install/ubuntu/
+sudo apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 sudo service docker restart
 # Configure Docker to be run as the vagrant user
 sudo usermod -aG docker vagrant
@@ -26,7 +28,7 @@ sudo docker --version
 
 echo "Nomad Install Beginning..."
 # For now we use a static version. Set to the latest tested version you want here.
-NOMAD_VERSION=0.9.5
+NOMAD_VERSION=1.5.4
 cd /tmp/
 sudo curl -sSL https://releases.hashicorp.com/nomad/${NOMAD_VERSION}/nomad_${NOMAD_VERSION}_linux_amd64.zip -o nomad.zip
 if [ ! -d nomad ]; then
