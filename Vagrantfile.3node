@@ -2,7 +2,7 @@
 # vi: set ft=ruby :
 
 Vagrant.configure(2) do |config|
-  config.vm.box = "bento/ubuntu-16.04" # 18.04 LTS
+  config.vm.box = "bento/ubuntu-20.04" # 20.04 LTS - N-1 release
   config.vm.provider "virtualbox" do |vb|
         vb.memory = "768"
   end
