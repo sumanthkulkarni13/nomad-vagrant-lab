@@ -19,7 +19,8 @@ sudo add-apt-repository \
       stable"
 sudo apt-get update -y
 ### Additional packes added based on Docker Official Documentation - https://docs.docker.com/engine/install/ubuntu/
-sudo apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-pluginsudo service docker restart
+sudo apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+sudo service docker restart
 # Configure Docker to be run as the vagrant user
 sudo usermod -aG docker vagrant
 sudo docker --version
