@@ -2,9 +2,9 @@
 # vi: set ft=ruby :
 
 Vagrant.configure(2) do |config|
-  config.vm.box = "bento/ubuntu-16.04" # 16.04 LTS
+  config.vm.box = "bento/ubuntu-16.04" # 18.04 LTS
   config.vm.provider "virtualbox" do |vb|
-        vb.memory = "1516"
+        vb.memory = "768"
   end
 
   # 3-node configuration - Region A
