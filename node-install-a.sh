@@ -42,14 +42,14 @@ fi
 sudo mv /tmp/nomad /tmp/archive/nomad
 sudo mkdir -p /etc/nomad.d
 sudo chmod a+w /etc/nomad.d
-sudo cp ./nomad-config/nomad-server-east.hcl /etc/nomad.d/
-sudo cp ./nomad-config/nomad.service /etc/systemd/system/
+sudo cp /vagrant/nomad-config/nomad-server-east.hcl /etc/nomad.d
+sudo cp /vagrant/nomad-config/nomad.service /etc/systemd/system
 sudo systemctl enable nomad.service
 sudo systemctl start nomad
 sudo systemctl status nomad
 
 echo "Consul Install Beginning..."
-# Uncommend the first and comment the second line to get the latest edition
+# Uncomment the first and comment the second line to get the latest edition
 # Otherwise use the static number
 CONSUL_VERSION=$(curl -s https://checkpoint-api.hashicorp.com/v1/check/consul | jq -r ".current_version")
 #CONSUL_VERSION=1.4.0
@@ -66,9 +66,8 @@ fi
 sudo mv /tmp/consul /tmp/archive/consul
 sudo mkdir -p /etc/consul.d
 sudo chmod a+w /etc/consul.d
-sudo cp ./consul-config/consul-server-east.hcl /etc/consul.d/
-sudo cp ./consul-config/consul-server-east.hcl /etc/consul.d/
-sudo cp ./consul-config/consul.service /etc/systemd/system/
+sudo cp /vagrant/consul-config/consul-server-east.hcl /etc/consul.d
+sudo cp /vagrant/consul-config/consul.service /etc/systemd/system
 sudo systemctl enable consul.service
 sudo systemctl start consul
 sudo systemctl status consul
