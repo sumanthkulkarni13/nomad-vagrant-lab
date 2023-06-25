@@ -42,7 +42,7 @@ fi
 sudo mv /tmp/nomad /tmp/archive/nomad
 sudo mkdir -p /etc/nomad.d
 sudo chmod a+w /etc/nomad.d
-#sudo cp ~/vagrant/nomad-server-east.hcl /etc/nomad.d/
+sudo cp ./nomad-config/nomad-server-east.hcl /etc/nomad.d/
 
 echo "Consul Install Beginning..."
 # Uncommend the first and comment the second line to get the latest edition
@@ -62,7 +62,7 @@ fi
 sudo mv /tmp/consul /tmp/archive/consul
 sudo mkdir -p /etc/consul.d
 sudo chmod a+w /etc/consul.d
-#sudo cp ~/vagrant/consul-server-east.hcl /etc/consul.d/
+sudo cp ./consul-config/consul-server-east.hcl /etc/consul.d/
 
 for bin in cfssl cfssl-certinfo cfssljson
 do
