@@ -43,6 +43,10 @@ sudo mv /tmp/nomad /tmp/archive/nomad
 sudo mkdir -p /etc/nomad.d
 sudo chmod a+w /etc/nomad.d
 sudo cp ./nomad-config/nomad-server-east.hcl /etc/nomad.d/
+sudo cp ./nomad-config/nomad.service /etc/systemd/system/
+sudo systemctl enable nomad.service
+sudo systemctl start nomad
+sudo systemctl status nomad
 
 echo "Consul Install Beginning..."
 # Uncommend the first and comment the second line to get the latest edition
@@ -63,6 +67,11 @@ sudo mv /tmp/consul /tmp/archive/consul
 sudo mkdir -p /etc/consul.d
 sudo chmod a+w /etc/consul.d
 sudo cp ./consul-config/consul-server-east.hcl /etc/consul.d/
+sudo cp ./consul-config/consul-server-east.hcl /etc/consul.d/
+sudo cp ./consul-config/consul.service /etc/systemd/system/
+sudo systemctl enable consul.service
+sudo systemctl start consul
+sudo systemctl status consul
 
 for bin in cfssl cfssl-certinfo cfssljson
 do
