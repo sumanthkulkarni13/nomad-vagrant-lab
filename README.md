@@ -14,14 +14,22 @@ This is a great way to get your feet wet with Nomad in a simplified environment 
 
 There are a few things you need to get this going:
 
-* Vagrant
+* Vagrant - Download from here - https://developer.hashicorp.com/vagrant/downloads
 
-* VirtualBox
+* VirtualBox - Download from here - https://www.virtualbox.org/wiki/Downloads
+  (Install Hyper-V optional feature before installing Virtualbox)
 
+* Vagrant by default mounts the working directory under '/vagrant'
+* All installation artefacts are loaded from '/vagrant'
+* Both nomad and consul have been configured to run as systemd daemons hence no need to run launch-a.sh script. Initial bootstrapping is more than enough
+* Nomad cluster members will be automatically registered
+* Cluster utilizes host only networking
+* All cluster member IPs are manually configured and registered with cluster 
+* This repository has been optimised to deploy 3 node setup
+* 
+  
 ## How to use the Nomad lab configuration
-
 ### For 3-node clusters you must rename `Vagrantfile.3node` to `Vagrantfile`
-### For 6-node (two region) clusters you must rename `Vagrantfile.6node` to `Vagrantfile`
 
 * Clone this repo (or fork it of you so desire and want to contribute to it)
 
