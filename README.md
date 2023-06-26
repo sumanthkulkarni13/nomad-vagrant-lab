@@ -4,7 +4,7 @@
 
 ## What is this?
 
-A simple 3-node or 6-node lab running Ubuntu servers on VirtualBox and each node runs Consul and Nomad servers which can be configured as a cluster.
+A simple 3-node running Ubuntu servers on VirtualBox and each node runs Consul and Nomad servers which can be configured as a cluster.
 
 ## Why use this method?
 
